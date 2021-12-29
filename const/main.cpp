@@ -18,13 +18,13 @@ void nonmutating_func(const std::vector<Team> & teams) {
 
 void mutating_func(std::vector<Team> & teams) {
 
-    // Fine, const function calls
+    // Fine, non const vector
     auto tot_age = 0;
     for(const auto & team : teams) {
         tot_age += team.Leader().Age();
     }
 
-    // Not fine, SetAge is const
+    // Fine that SetAge is non const
     for(auto & team : teams) {
         team.Leader().SetAge(20);
     }
